@@ -1,0 +1,116 @@
+{
+    "nav": {
+      "home": "Home",
+      "cheeses": "Our Cheeses",
+      "platters": "Our Platters",
+      "about": "About",
+      "contact": "Contact",
+      "techniques": "Techniques",
+      "delivery": "Delivery",
+      "login": "Login",
+      "register": "Register",
+      "account": "My Account"
+    },
+    "home": {
+      "hero": {
+        "title": "Fromagerie du Baou",
+        "subtitle": "A must-stop for fine food lovers"
+      },
+      "welcome": {
+        "title": "Welcome to Fromagerie du Baou",
+        "description": "Located in Peypin in the Bouches-du-Rhône, our artisanal cheese shop offers a selection of French regional cheeses, crafted using traditional methods."
+      },
+      "featured": {
+        "title": "Our Featured Products",
+        "more": "See all our cheeses"
+      },
+      "newsletter": {
+        "title": "Stay informed",
+        "description": "Subscribe to our newsletter to receive our news and special offers",
+        "placeholder": "Your email address",
+        "button": "Subscribe"
+      }
+    },
+    "cheeses": {
+      "title": "Our Cheeses",
+      "description": "Discover our selection of artisanal cheeses",
+      "origin": "Origin",
+      "milk": "Milk from",
+      "price": "Price"
+    },
+    "platters": {
+      "title": "Our Platters",
+      "description": "Cheese platters for all occasions",
+      "custom": {
+        "title": "Create your custom platter",
+        "description": "We compose personalized platters according to your tastes and budget",
+        "button": "Request a quote"
+      }
+    },
+    "about": {
+      "title": "About us",
+      "history": {
+        "title": "Our History",
+        "description": "Founded in 2024, Fromagerie du Baou was born from a passion for artisanal cheeses and a desire to promote traditional know-how."
+      },
+      "values": {
+        "title": "Our Values",
+        "local": "Promotion of regional products",
+        "short": "Prioritizing short supply chains",
+        "artisanal": "Valuing artisanal craftsmanship"
+      }
+    },
+    "contact": {
+      "title": "Contact us",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "button": "Send"
+      },
+      "info": {
+        "address": "Address",
+        "phone": "Phone",
+        "email": "Email",
+        "hours": "Opening hours"
+      }
+    },
+    "auth": {
+      "login": {
+        "title": "Login",
+        "email": "Email",
+        "password": "Password",
+        "button": "Login",
+        "noAccount": "Don't have an account yet?",
+        "register": "Register"
+      },
+      "register": {
+        "title": "Register",
+        "firstName": "First name",
+        "lastName": "Last name",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm password",
+        "phone": "Phone (optional)",
+        "button": "Register",
+        "hasAccount": "Already have an account?",
+        "login": "Login"
+      }
+    },
+    "account": {
+      "title": "My Account",
+      "profile": "My Profile",
+      "orders": "My Orders",
+      "requests": "My Platter Requests",
+      "messages": "My Messages",
+      "logout": "Logout"
+    },
+    "common": {
+      "readMore": "Read more",
+      "loading": "Loading...",
+      "error": "An error occurred",
+      "success": "Operation successful"
+    }
+}
+  
