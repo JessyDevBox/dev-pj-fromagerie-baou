@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5 pt-5">
+    <h1 class="text-center mb-5">Nos Plateaux de Fromages</h1>
+    
+    <div class="row">
+        {% for board in boards %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="{{ board.image_url }}" class="card-img-top" alt="{{ board.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ board.name }}</h5>
+                    <p class="card-text">{{ board.description }}</p>
+                    <p class="card-text">
+                        <small class="text-muted">{{ board.number_of_cheeses }} fromages</small>
+                    </p>
+                    <p class="card-text"><strong>{{ board.price }}€</strong></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
