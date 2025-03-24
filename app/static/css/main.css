@@ -1,0 +1,93 @@
+
+a {
+    text-decoration: none; /* Remove underline for all text */
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+}
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.garden-list .garden-card {
+    transition: transform 0.2s;
+}
+.garden-list .garden-card:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    /* transform: translateY(-5px); */
+}
+
+/* -- Garden details photo -- */
+.image-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.image-container .overlay-text {
+    z-index: 2;
+}
+
+
+/* -- Garden details sensors -- */
+.sensor-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0 0 0;
+    padding: 5px;
+    border: 2px solid #72a37a;
+    border-radius: 10px;
+    background-color: #e4f1e3;
+}
+.sensor {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.sensor-temperature {
+    color: darkred;
+}
+.sensor-temperature.cold {
+    color: blue;
+}
+
+.sensor-humidity {
+    color: blue;
+}
+

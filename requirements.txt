@@ -1,0 +1,11 @@
+flask
+flask-sqlalchemy
+flask-login
+flask-migrate
+flask-restx
+flask-wtf
+Flask-Mail
+email-validator
+python-dotenv
+werkzeug
+black

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Mon Jardin - Mini Garden{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h1>Mon Jardin</h1>
+        </div>
+        <div class="col-md-4 text-end">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addGardenModal">
+                <i class="fas fa-plus"></i> Nouveau Jardin
+            </button>
+        </div>
+    </div>
+
+    <!-- Gardens Grid -->
+    <div class="container">
+        {% if garden %}
+        <div class="card garden-card">
+            <div class="image-container">
+                <img src="{{ garden.image | default(url_for('static', filename='images/default-garden.jpg')) }}" class="card-image" alt="Garden Image">
+                <div class="overlay">
+                    <span class="overlay-text">Photo non disponible</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ garden.name }}</h5>
+                <p class="card-text">{{ garden.description }}</p>
+                <p class="text-muted"><small>Créé le: {{ garden.created_at.strftime('%d/%m/%Y') }}</small></p>
+
+                <div class="sensor-container">
+                    <p class="sensor sensor-temperature" id="sensorTemperature">
+                        <i class="fas fa-thermometer-half"></i>
+                            <span class="data-value">__ °C</span>
+                        <i class="fas fa-sun"></i>
+                    </p>
+                    <p class="sensor sensor-humidity" id="sensorHumidity">
+                        <i class="fas fa-tint"></i>
+                            <span class="data-value">__ %</span>
+                        <i class="fas fa-cloud"></i>
+                    </p>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent">
+                <div class="btn-group w-100">
+                    <button class="btn btn-outline-primary" onclick="editGarden({{ garden.id }})">
+                        <i class="fas fa-edit"></i> Modifier
+                    </button>
+                    <button class="btn btn-outline-danger" onclick="deleteGarden({{ garden.id }})">
+                        <i class="fas fa-trash"></i> Supprimer
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col-12 text-center">
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i> Aucun jardin trouvé.
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<input type="hidden" id="gardenId" value="{{ garden.id }}" />
+{% block scripts %}
+<script src="{{ url_for('static', filename='garden_details.js') }}"></script>
+{% endblock %}
+
+{% endblock %}
