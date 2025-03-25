@@ -1,4 +1,19 @@
 # DB Models
+
+models/
+├── __init__.py
+├── user.py
+├── cheese.py
+├── cheese_milk.py          < link with type of milk
+├── discussion.py
+├── discussion_message.py
+├── message.py
+├── milk.py
+├── paste.py
+├── platter.py
+└── platter_cheese.py
+
+
 ``` 
 User (user)
 - id
