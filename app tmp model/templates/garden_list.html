@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Mon Jardin - Mini Garden{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h1>Mes Jardins</h1>
+        </div>
+        <div class="col-md-4 text-end">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addGardenModal">
+                <i class="fas fa-plus"></i> Nouveau Jardin
+            </button>
+        </div>
+    </div>
+
+    <!-- Gardens Grid -->
+    <div class="row g-4 garden-list">
+        {% for garden in gardens %}
+        <div class="col-md-4 garden-card">
+            <a href="{{ url_for('garden.details', garden_id=garden.id) }}">
+            <div class="card h-100 garden-card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ garden.name }}</h5>
+                    <p class="card-text">{{ garden.description }}</p>
+                    <p class="text-muted"><small>Créé le: {{ garden.created_at.strftime('%d/%m/%Y') }}</small></p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <div class="btn-group w-100">
+                        <button class="btn btn-outline-primary" onclick="editGarden({{ garden.id }})">
+                            <i class="fas fa-edit"></i> Modifier
+                        </button>
+                        <button class="btn btn-outline-danger" onclick="deleteGarden({{ garden.id }})">
+                            <i class="fas fa-trash"></i> Supprimer
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        {% else %}
+        <div class="col-12 text-center">
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i> Vous n'avez pas encore de jardin. Commencez par en créer un !
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Add Garden Modal -->
+<div class="modal fade" id="addGardenModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ajouter un Jardin</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="addGardenForm">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="gardenName" class="form-label">Nom du jardin</label>
+                        <input type="text" class="form-control" id="gardenName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="gardenDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="gardenDescription" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-success">Créer</button>
+                </div>
+                <input type="hidden" id="gardenUserId" value="{{ current_user.id }}" />
+            </form>
+        </div>
+    </div>
+</div>
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='garden_forms.js') }}"></script>
+{% endblock %}
+
+{% endblock %}
