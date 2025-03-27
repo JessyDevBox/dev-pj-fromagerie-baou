@@ -3,22 +3,27 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 # Import des modèles pour les rendre disponibles depuis le package models
-from .user import User
+from .cheese_milk import CheeseMilk
 from .cheese import Cheese
+from .discussion import Discussion
+from .message import Message
+from .milk import Milk
+from .paste_type import PasteType
 from .platter import Platter
 from .platter_cheese import PlatterCheese
-from .message import Message
-from .discussion import Discussion
-from .discussion_message import DiscussionMessage
+from .user import User
+
 
 # Liste des modèles pour faciliter l'importation
 __all__ = [
-    'db',
-    'User',
-    'Cheese',
-    'Platter',
-    'PlatterCheese',
-    'Message',
-    'Discussion',
-    'DiscussionMessage'
+    "db",
+    "CheeseMilk",
+    "Cheese",
+    "Discussion",
+    "Message",
+    "Milk",
+    "PasteType",
+    "Platter",
+    "PlatterCheese",
+    "User",
 ]

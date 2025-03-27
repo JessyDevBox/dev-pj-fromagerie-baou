@@ -4,6 +4,7 @@ flask-login
 flask-migrate
 flask-restx
 flask-wtf
+flask-babel
 Flask-Mail
 email-validator
 python-dotenv

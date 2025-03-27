@@ -1,0 +1,34 @@
+{
+  "site": {
+    "name": "My Site"
+  },
+  "nav": {
+    "home": "Home",
+    "contact": "Contact",
+    "register": "Register",
+    "admin": "Admin"
+  },
+  "home": {
+    "title": "Welcome to our site"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send"
+  },
+  "register": {
+    "title": "Register",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Register"
+  },
+  "admin": {
+    "title": "Administration",
+    "content": "Content Management",
+    "edit": "Edit",
+    "delete": "Delete"
+  }
+}

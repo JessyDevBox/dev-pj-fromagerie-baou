@@ -1,4 +1,13 @@
 # run.py
+from app import create_app
+
+app = create_app()
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
+"""
 from app import create_app, db
 from app.config import ConfigEnv
 
@@ -22,3 +31,4 @@ if __name__ == "__main__":
             app.run(debug=True, host=host, port=port)
         else:
             app.run(debug=True)
+"""
