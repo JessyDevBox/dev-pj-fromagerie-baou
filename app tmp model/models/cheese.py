@@ -10,7 +10,9 @@ class Cheese(db.Model):
     name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    cheese_type_id = db.Column(db.Integer, db.ForeignKey("cheese_type.id"), nullable=False)
+    cheese_type_id = db.Column(
+        db.Integer, db.ForeignKey("cheese_type.id"), nullable=False
+    )
 
     # Relation avec le modèle User
     user = db.relationship("CheeseType", backref=db.backref("cheeses", lazy=True))

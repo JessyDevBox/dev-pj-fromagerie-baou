@@ -9,16 +9,6 @@ from .platter import Platter
 from .platter_cheese import PlatterCheese
 from .message import Message
 from .discussion import Discussion
-from .discussion_message import DiscussionMessage
 
 # Liste des modèles pour faciliter l'importation
-__all__ = [
-    'db',
-    'User',
-    'Cheese',
-    'Platter',
-    'PlatterCheese',
-    'Message',
-    'Discussion',
-    'DiscussionMessage'
-]
+__all__ = ["db", "User", "Cheese", "Platter", "PlatterCheese", "Message", "Discussion"]
