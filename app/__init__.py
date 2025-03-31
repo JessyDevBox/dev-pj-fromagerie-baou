@@ -4,6 +4,7 @@ from flask_login import LoginManager
 from flask_migrate import Migrate
 from app.config import Config
 from app.inc.mail import init_mail
+
 # from flask_cors import CORS
 
 
@@ -31,8 +32,10 @@ def create_app():
 
     # Import blueprints routes
     from app.routes.base import bp as index_bp
+
     # from app.routes.garden import bp as garden_bp
     from app.routes.auth import bp as auth_bp
+
     # from app.routes.admin import bp as admin_bp
     # from app.routes.sandbox import bp as sandbox_bp
     # from app.routes.sensor import bp as sensor_bp
@@ -54,4 +57,3 @@ def create_app():
         return User.query.get(int(id))
 
     return app
-

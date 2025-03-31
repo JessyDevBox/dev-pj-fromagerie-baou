@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Mini Jardin{% endblock %}</title>
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/leaf.png')}}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -14,18 +17,38 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light shadow"> -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('base.index') }}">
-                <i class="fas fa-leaf text-success"></i> Fromagerie Baou
+                <!-- <img src="logo.png" alt="Fromagerie du Baou" class="img-fluid"> -->
+                <i class="fas fa-leaf text-success"></i> Fromagerie du Baou
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('base.index') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#a-propos">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nos-fromages">Nos Fromages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#plateaux">Plateaux</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-primary-blue" href="#horaires">Horaires</a>
                     </li>
                     {#
                     <li class="nav-item">
@@ -75,15 +98,89 @@
     </div>
     {% endif %}
 
-    <!-- Footer -->
-    <footer class="footer" style="border-top: 1px solid lightgrey;">
-        <div class="container text-center">
-            <p>&copy; 2025 Fromagerie du Baou. Tous droits réservés.</p>
-        </div>
-    </footer>
 
+      <!-- Footer -->
+      <footer>
+        <div class="container footer-content">
+        <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <img src="logo-white.png" alt="Fromagerie du Baou" class="footer-logo">
+          <p>Votre artisan fromager passionné depuis 2020.</p>
+          <div class="social-icons mt-4">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5 class="text-accent-yellow mb-4">Liens rapides</h5>
+          <div class="footer-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#a-propos">À propos</a>
+            <a href="#nos-fromages">Nos fromages</a>
+            <a href="#plateaux">Plateaux</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-accent-yellow mb-4">Newsletter</h5>
+          <p>Inscrivez-vous pour recevoir nos actualités et offres spéciales.</p>
+          <form class="newsletter-form">
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Votre email" aria-label="Email" required>
+              <button class="btn btn-accent-yellow" type="submit">S'inscrire</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="text-center copyright">
+          <p>&copy; 2025 Fromagerie du Baou. Tous droits réservés.</p>
+      </div>
+      </div>
+      </footer>
+
+      
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     {% block scripts %}{% endblock %}
-</body>
+
+    <!-- Custom JS -->
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+    
+        function checkFade() {
+        fadeElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+    
+        if (elementTop < windowHeight - 100) {
+            element.classList.add('active');
+        }
+        });
+        }
+    
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+    
+        function checkScroll() {
+        if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+        } else {
+        navbar.classList.remove('scrolled');
+        }
+        }
+    
+        window.addEventListener('scroll', function() {
+        checkFade();
+        checkScroll();
+        });
+    
+        // Check on load
+        checkFade();
+        checkScroll();
+        });
+        </script>
+    </body>
 </html>

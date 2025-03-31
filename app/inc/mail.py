@@ -11,9 +11,7 @@ def init_mail(app):
     global obj_mail
     app.config["MAIL_SERVER"] = Config.MAIL_SERVER
     app.config["MAIL_PORT"] = Config.MAIL_PORT
-    app.config["MAIL_USERNAME"] = (
-        Config.MAIL_SENDER
-    )  # Use your actual Gmail address
+    app.config["MAIL_USERNAME"] = Config.MAIL_SENDER  # Use your actual Gmail address
     app.config["MAIL_PASSWORD"] = (
         Config.MAIL_PASSWORD
     )  # Use your generated App Password

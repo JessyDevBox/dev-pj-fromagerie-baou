@@ -16,7 +16,7 @@ class Cheese(db.Model):
         db.String(3), default="FR"
     )  # country code with 2, 3 letters
     price_per_kg = db.Column(db.Integer, nullable=False)  # in centimes
-    paste_type_id = db.Column(db.Integer, db.ForeignKey("paste_tyep.id"), nullable=True)
+    paste_type_id = db.Column(db.Integer, db.ForeignKey("paste_types.id"), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     # Relations

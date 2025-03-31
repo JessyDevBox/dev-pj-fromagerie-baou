@@ -11,8 +11,8 @@ class PasteType(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     # Relations
-    platter_cheeses = db.relationship(
-        "CheeseMilk", backref="cheese", lazy=True, cascade="all, delete-orphan"
+    cheese_paste_types = db.relationship(
+        "Cheese", backref="paste_type", lazy=True, cascade="all, delete-orphan"
     )
 
     def __repr__(self):

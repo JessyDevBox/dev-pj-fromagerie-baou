@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Bienvenue - Mini Garden{% endblock %}
+
+{% block content %}
+<section class="">
+    <div class="container">
+        <h1 class="display-4">***** ** SANDBOX ** *****</h1>
+        {% if not ctx %}
+        <h1 class="display-4">No context found: ctx. ?</h1>
+        {% else %}
+        <p class="lead">
+            {% if not ctx.title %}
+            <div class="m-2">
+                ctx.title: {{ ctx.title | default('?ctx.title?') }}
+            </div>
+            {% else %}
+            <h3 class="">*** Context - key > value ***</h3>
+                {% for key in ctx %}
+            <div class="">
+                {{ key }} > {{ ctx[key] }}
+            </div>
+                {% endfor %}
+            {% endif %}
+        </p>
+        {% endif %}
+    </div>
+</section>
+<br>
+<hr>
+<br>
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Fonctionnalités</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 garden-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-seedling fa-3x text-success mb-3"></i>
+                        <h5 class="card-title">Créez votre jardin</h5>
+                        <p class="card-text">Concevez et organisez votre espace vert personnel selon vos envies.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 garden-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-calendar-alt fa-3x text-success mb-3"></i>
+                        <h5 class="card-title">Planifiez vos cultures</h5>
+                        <p class="card-text">Suivez le calendrier de plantation et d'entretien de vos végétaux.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 garden-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
+                        <h5 class="card-title">Suivez la progression</h5>
+                        <p class="card-text">Visualisez l'évolution de votre jardin au fil du temps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

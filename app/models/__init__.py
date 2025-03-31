@@ -14,4 +14,15 @@ from .platter_cheese import PlatterCheese
 from .user import User
 
 # Liste des modèles pour faciliter l'importation
-__all__ = ["db", "Cheese", "CheeseMilk", "Discussion", "Message", "Milk", "PasteType", "Platter", "PlatterCheese", "User"]
+__all__ = [
+    "db",
+    "Cheese",
+    "CheeseMilk",
+    "Discussion",
+    "Message",
+    "Milk",
+    "PasteType",
+    "Platter",
+    "PlatterCheese",
+    "User",
+]
