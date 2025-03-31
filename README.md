@@ -35,7 +35,6 @@ $ C:\Users\jessy\AppData\Local\Programs\Python\Python311\python.exe -m venv .ven
 
 - For os current Python version
 $ python -m venv venv
-
 ```
 
 ```

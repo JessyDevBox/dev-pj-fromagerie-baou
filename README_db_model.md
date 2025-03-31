@@ -6,7 +6,6 @@ models/
 ├── cheese.py
 ├── cheese_milk.py          < link with type of milk
 ├── discussion.py
-├── discussion_message.py
 ├── message.py
 ├── milk.py
 ├── paste.py

@@ -1,6 +1,6 @@
 # run.py
 from app import create_app, db
-from app.config import ConfigEnv
+from app.config import Config
 
 app = create_app()
 
@@ -8,16 +8,13 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
 
-    print(f"*** IS PROD: {ConfigEnv.is_prod} ***")
+    host = Config.FLASK_HOST
+    port = Config.FLASK_PORT
+    print(f"*** ENV: {Config.ENV} *** PROD - host:port - {host}:{port} ***")
 
-    host = ConfigEnv.flask_host
-    port = ConfigEnv.flask_port
-
-    if ConfigEnv.is_prod:
-        print(f"*** PROD - host:port - {host}:{port} ***")
+    if Config.ENV == "production":
         app.run(host=host, port=port)
     else:
-        print(f"*** DEV - host:port - {host}:{port} ***")
         if host:
             app.run(debug=True, host=host, port=port)
         else:

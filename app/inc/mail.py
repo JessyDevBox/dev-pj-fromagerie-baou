@@ -1,6 +1,6 @@
 from typing import List
 from flask_mail import Mail, Message
-from app.config import ConfigEmail
+from app.config import Config
 
 
 # Global object for mail app purpose
@@ -9,16 +9,16 @@ obj_mail = None
 
 def init_mail(app):
     global obj_mail
-    app.config["MAIL_SERVER"] = ConfigEmail.MAIL_SERVER
-    app.config["MAIL_PORT"] = ConfigEmail.MAIL_PORT
+    app.config["MAIL_SERVER"] = Config.MAIL_SERVER
+    app.config["MAIL_PORT"] = Config.MAIL_PORT
     app.config["MAIL_USERNAME"] = (
-        ConfigEmail.MAIL_SENDER
+        Config.MAIL_SENDER
     )  # Use your actual Gmail address
     app.config["MAIL_PASSWORD"] = (
-        ConfigEmail.MAIL_PASSWORD
+        Config.MAIL_PASSWORD
     )  # Use your generated App Password
-    app.config["MAIL_USE_TLS"] = ConfigEmail.MAIL_USE_TLS
-    app.config["MAIL_USE_SSL"] = ConfigEmail.MAIL_USE_SSL
+    app.config["MAIL_USE_TLS"] = Config.MAIL_USE_TLS
+    app.config["MAIL_USE_SSL"] = Config.MAIL_USE_SSL
     # print("###### app.config: ", app.config)
     obj_mail = Mail(app)
     return obj_mail
@@ -46,7 +46,7 @@ def send_mail(
     send_to: List[str], subject: str, message: str, is_message_html: bool = False
 ):
     msg = Message(
-        sender=ConfigEmail.MAIL_SENDER,
+        sender=Config.MAIL_SENDER,
         recipients=send_to,
         subject=subject,
     )

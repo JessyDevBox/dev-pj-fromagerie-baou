@@ -9,7 +9,7 @@ class Cheese(db.Model):
     name = db.Column(db.String(250), nullable=False)
     description = db.Column(db.Text)
     quality_label = db.Column(db.String(100), default=False)
-    is_bio = db.Column(db.Bool, default=False)
+    is_bio = db.Column(db.Boolean, default=False)
     age_days_min = db.Column(db.Integer)  # age in days minimum
     age_days_max = db.Column(db.Integer)  # age in days maximum
     country_code = db.Column(
@@ -21,7 +21,7 @@ class Cheese(db.Model):
 
     # Relations
     platter_cheeses = db.relationship("PlatterCheese", backref="cheese", lazy=True)
-    platter_cheeses = db.relationship("CheeseMilk", backref="cheese", lazy=True)
+    cheese_milks = db.relationship("CheeseMilk", backref="cheese", lazy=True)
 
     def __repr__(self):
         return f"<Cheese {self.name}>"
