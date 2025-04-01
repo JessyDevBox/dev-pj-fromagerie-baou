@@ -1,0 +1,33 @@
+{% set bg_url = url_for('static', filename='images/bg/bg-001.jpeg') %}
+{% set img_url = url_for('static', filename='images/bg/bg-003.jpg') %}
+<!-- Hero Section -->
+<!-- <section class="hero" id="accueil"> -->
+<!-- <section class="hero parallax-banner" style="background-image: url('{{bg_url}}');"> -->
+<section class="hero" style="background-image: url('{{bg_url}}');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 hero-content">
+
+                <div class="" style="position:absolute;top:20px;left: -15px;background-color:blue;width: 100%;height: 100%;border-radius: 20px;"></div>
+
+                <div class="hours-badge fade-in">
+                    <i class="far fa-clock me-2"></i> Ouvert tous les dimanches 9h—13h
+                </div>
+                <h1 class="fade-in fade-in-delay-1">Bienvenue à la<br>Fromagerie du Baou</h1>
+                <p class="fade-in fade-in-delay-2">Découvrez notre sélection de fromages artisanaux, affinés avec passion pour vous offrir des saveurs authentiques et d'exception.</p>
+                <a href="#nos-fromages" class="btn btn-accent-yellow btn-lg fade-in fade-in-delay-3">Découvrir nos fromages</a>
+
+                {% if not current_user.is_authenticated %}
+                <div class="mt-4">
+                    <!-- <a href="{{ url_for('base.index') }}" class="btn btn-success btn-lg me-3">Commencer</a> -->
+                    <a href="{{ url_for('auth.login') }}" class="btn btn-outline-light btn-lg">Se connecter</a>
+                </div>
+                {% endif %}
+
+            </div>
+            <div class="col-lg-6 mt-5 mt-lg-0 text-center hero-image-container fade-in fade-in-delay-2">
+                <img src="{{img_url}}" alt="Sélection de fromages" class="img-fluid rounded-3 shadow hero-image">
+            </div>
+        </div>
+    </div>
+</section>

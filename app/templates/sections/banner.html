@@ -1,6 +1,6 @@
+{% set bg_url = url_for('static', filename='images/bg/bg-002.jpg') %}
 <!-- Parallax Banner -->
-<!-- <section class="parallax-banner" style="background-image: url('images/bg-002.jpg');"> -->
-<section class="parallax-banner" style="background-image: url('{{ url_for('static', filename='images/bg/bg-002.jpg')}}');">
+<section class="parallax-banner" style="background-image: url('{{bg_url}}');">
     <div class="parallax-overlay"></div>
     <div class="parallax-content">
         <h2>L'Art du Fromage</h2>

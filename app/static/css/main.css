@@ -1,4 +1,7 @@
 :root {
+    --main-design-yellow: #f3e264;
+    --main-design-blue: #1a4b89;
+    --main-design-cheese: #ffa600;
     --primary-blue: #0a3b79;
     --primary-blue-light: #1a4b89;
     --primary-blue-dark: #062c5a;
@@ -8,7 +11,7 @@
     --light-gray: #f8f9fa;
     --text-dark: #333;
     --text-light: #f8f9fa;
-    --text-brand-cheese: #ffa600;
+    --text-brand-cheese: var(--main-design-cheese);
 }
 
 body {
