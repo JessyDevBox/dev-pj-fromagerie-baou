@@ -43,6 +43,9 @@ class Config:
     MAIL_USE_TLS = os.environ.get("MAIL_USE_TLS", "true").lower() == "true"
     MAIL_USE_SSL = os.environ.get("MAIL_USE_SSL", "false").lower() == "true"
 
+    # Google Key
+    GOOGLE_GMAP_KEY = os.environ.get("GOOGLE_GMAP_KEY", "xxx")
+
     # Redis configuration
     REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
     REDIS_PORT = int(os.getenv("REDIS_PORT", 6379))

@@ -14,7 +14,7 @@ bp = Blueprint("base", __name__)
 def index():
     ctx = {}
 
-    gmap_key = "AIzaSyAHlv9OaZxoMwIgXTToKJgtopKvDp9GLZs"
+    gmap_key = Config.GOOGLE_GMAP_KEY
     address_name = "Fromagerie du Baou"
     address = "ZA, Les Termes D908, 13124 Peypin"
     encoded_address = urllib.parse.quote(f"{address_name}, {address}")
