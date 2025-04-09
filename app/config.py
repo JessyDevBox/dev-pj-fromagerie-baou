@@ -15,6 +15,10 @@ class Config:
     DEBUG = os.getenv("DEBUG", "False").lower() == "true"
     ENV = os.getenv("ENV", "development")
 
+    # Flask configuration
+    FLASK_HOST = os.getenv("FLASK_HOST", "127.0.0.1")
+    FLASK_PORT = int(os.getenv("FLASK_PORT", 5000))
+
     SECRET_KEY = os.getenv("SECRET_KEY", "your_secret_key")
 
     SQLALCHEMY_DATABASE_URI = os.environ.get(
@@ -23,10 +27,6 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     WTF_CSRF_SECRET_KEY = os.environ.get("WTF_CSRF_SECRET_KEY") or "csrf-secret-key"
-
-    # Flask configuration
-    FLASK_HOST = os.getenv("FLASK_HOST", "127.0.0.1")
-    FLASK_PORT = int(os.getenv("FLASK_PORT", 5000))
 
     # Database configuration
     DB_HOST = os.getenv("DB_HOST", "localhost")
