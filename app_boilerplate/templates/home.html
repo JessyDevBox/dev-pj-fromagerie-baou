@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Bienvenue sur Mon Application!</h1>
+        <p class="lead">Cette application est un boilerplate Flask avec authentification.</p>
+        <hr class="my-4">
+        <p>Utilisez ce modèle comme point de départ pour votre projet web.</p>
+        {% if not current_user.is_authenticated %}
+            <a class="btn btn-primary btn-lg" href="{{ url_for('auth.register') }}" role="button">S'inscrire</a>
+            <a class="btn btn-outline-primary btn-lg" href="{{ url_for('auth.login') }}" role="button">Se connecter</a>
+        {% endif %}
+    </div>
+{% endblock %}

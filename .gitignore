@@ -1,6 +1,7 @@
 # Dev JESSY
 .DS_Store
 app/data/*.db
+app/data/*.db.backup
 
 # SQLAlchemy
 migrations/

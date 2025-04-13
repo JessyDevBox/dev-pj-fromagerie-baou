@@ -17,9 +17,9 @@ class User(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     # Relations
-    platters = db.relationship("Platter", backref="client", lazy=True)
+    platters = db.relationship("Platter", backref="user", lazy=True)
     messages = db.relationship("Message", backref="user", lazy=True)
-    discussions = db.relationship("Discussion", backref="creator", lazy=True)
+    discussions = db.relationship("Discussion", backref="user", lazy=True)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)

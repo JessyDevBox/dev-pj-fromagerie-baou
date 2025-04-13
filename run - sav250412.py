@@ -1,8 +1,8 @@
+# run.py
 from app import create_app
 from app.config import Config
-from app.models import db
 
-app = create_app()
+app, db = create_app()
 
 if __name__ == "__main__":
     with app.app_context():
