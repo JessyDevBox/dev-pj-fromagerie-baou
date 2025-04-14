@@ -10,6 +10,7 @@ if __name__ == "__main__":
 
     host = Config.FLASK_HOST
     port = Config.FLASK_PORT
+    print(f"----- APP Name: {Config.APP_NAME} -----")
     print(f"*** ENV: {Config.ENV} *** PROD - host:port - {host}:{port} ***")
 
     if Config.ENV == "production":
