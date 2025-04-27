@@ -1,3 +1,4 @@
+{% set main_logo_url = url_for('static', filename='images/logo-300.png') %}
 {% set bg_url = url_for('static', filename='images/bg/bg-001.jpeg') %}
 {% set img_url = url_for('static', filename='images/bg/bg-003.jpg') %}
 <!-- Hero Section -->
@@ -8,12 +9,16 @@
         <div class="row align-items-center">
             <div class="col-lg-6 hero-content">
 
-                <div class="" style="position:absolute;top:20px;left: -15px;background-color:blue;width: 100%;height: 100%;border-radius: 20px;"></div>
+                <div class="hero-content-background"></div>
 
                 <div class="hours-badge fade-in">
                     <i class="far fa-clock me-2"></i> Ouvert tous les dimanches 9h—13h
                 </div>
-                <h1 class="fade-in fade-in-delay-1">Bienvenue à la<br>Fromagerie du Baou</h1>
+
+                <h1 class="fade-in fade-in-delay-1">
+                    <img src="{{main_logo_url}}" alt="Fromagerie du Baou" class="img-fluid">
+                    Bienvenue
+                </h1>
                 <p class="fade-in fade-in-delay-2">Découvrez notre sélection de fromages artisanaux, affinés avec passion pour vous offrir des saveurs authentiques et d'exception.</p>
                 <a href="#nos-fromages" class="btn btn-accent-yellow btn-lg fade-in fade-in-delay-3">Découvrir nos fromages</a>
 

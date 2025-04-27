@@ -2,6 +2,7 @@
 .DS_Store
 app/data/*.db
 app/data/*.db.backup
+app/static/tmp/
 
 # SQLAlchemy
 migrations/

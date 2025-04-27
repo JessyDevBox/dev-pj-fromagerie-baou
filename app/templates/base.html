@@ -17,57 +17,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light shadow"> -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url_for('base.index') }}">
-                <!-- <img src="logo.png" alt="Fromagerie du Baou" class="img-fluid"> -->
-                <i class="fas fa-cheese"></i> Fromagerie du Baou
-            </a>
-            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('base.index') }}">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#a-propos">À propos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#nos-fromages">Nos Fromages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#plateaux">Plateaux</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item ms-3">
-                        <a class="btn btn-primary-blue" href="#horaires">Horaires</a>
-                    </li>
-                    {#
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('base.index') }}">Nos fromages (url?)</a>
-                    </li>
-                    #}
-                </ul>
-                <div class="navbar-nav">
-                    {% if current_user.is_authenticated %}
-                        <span class="nav-item nav-link">Bonjour, {{ current_user.username }}</span>
-                        <a class="nav-link" href="{{ url_for('auth.logout') }}">Déconnexion</a>
-                    {% else %}
-                        <a class="nav-link" href="{{ url_for('auth.login') }}">Connexion</a>
-                        <a class="nav-link" href="{{ url_for('auth.register') }}">Inscription</a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </nav>
+    {% include '/components/navbar.html' %}
 
     <!-- Flash Messages -->
     {% with messages = get_flashed_messages(with_categories=true) %}
