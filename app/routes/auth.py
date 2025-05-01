@@ -53,8 +53,21 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         user_email = form.email.data
+        username = form.username.data
+
+        # check if email is already recorded
+        user_exists = User.query.filter(
+            (User.email == user_email) | (User.username == username)
+        ).first()
+
+        if user_exists:
+            flash("Email already used", "danger")
+            return redirect(url_for("auth.login"))
+            
+
+        # create user
         user = User(
-            username=form.username.data,
+            username=username,
             email=form.email.data,
             rights=UserRights.default,
         )

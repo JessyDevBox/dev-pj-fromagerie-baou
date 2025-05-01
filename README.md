@@ -58,5 +58,9 @@ $ flask routes
 ```
 
 ```
+$ ruff format
+```
+
+```
 $ python run.py
 ```
