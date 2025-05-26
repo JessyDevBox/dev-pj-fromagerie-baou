@@ -43,6 +43,7 @@ def send_mail_html(send_to: List[str], subject: str, message: str):
 def send_mail(
     send_to: List[str], subject: str, message: str, is_message_html: bool = False
 ):
+    global obj_mail
     msg = Message(
         sender=Config.MAIL_SENDER,
         recipients=send_to,

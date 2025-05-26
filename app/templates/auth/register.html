@@ -6,13 +6,29 @@
         <div class="col-md-6">
             <div class="card shadow">
                 <div class="card-body">
-                    <h1 class="card-title text-center mb-4">Suscribe</h1>
+                    <h1 class="card-title text-center mb-4">Inscription</h1>
                     <form method="POST" action="" novalidate>
                         {{ form.hidden_tag() }}
+                        {#
                         <div class="mb-3">
                             {{ form.username.label(class="form-label") }}
                             {{ form.username(class="form-control") }}
                             {% for error in form.username.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        #}
+                        <div class="mb-3">
+                            {{ form.first_name.label(class="form-label") }}
+                            {{ form.first_name(class="form-control") }}
+                            {% for error in form.first_name.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.last_name.label(class="form-label") }}
+                            {{ form.last_name(class="form-control") }}
+                            {% for error in form.last_name.errors %}
                             <span class="text-danger">{{ error }}</span>
                             {% endfor %}
                         </div>

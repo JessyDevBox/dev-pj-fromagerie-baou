@@ -4,6 +4,9 @@
     background-color: var(--primary-blue);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .navbar.scrolled {
@@ -25,7 +28,7 @@
 }
 
 .nav-link {
-    color: white;
+    color: var(--navbar-link-color);
     font-weight: 500;
     margin: 0 10px;
     position: relative;
@@ -45,4 +48,8 @@
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--navbar-link-color-hover);
 }

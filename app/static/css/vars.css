@@ -12,4 +12,7 @@
     --text-dark: #333;
     --text-light: #f8f9fa;
     --text-brand-cheese: var(--main-design-cheese);
+
+    --navbar-link-color: var(--text-light);
+    --navbar-link-color-hover: var(--text-light);
 }

@@ -55,6 +55,9 @@ def register():
         user_email = form.email.data
         username = form.username.data
 
+        if not username:
+            username = user_email
+
         # check if email is already recorded
         user_exists = User.query.filter(
             (User.email == user_email) | (User.username == username)
@@ -65,10 +68,14 @@ def register():
             return redirect(url_for("auth.login"))
             
 
+        print(f"** Create user: {user_email}")
+
         # create user
         user = User(
             username=username,
             email=form.email.data,
+            first_name=form.first_name.data,
+            last_name=form.last_name.data,
             rights=UserRights.default,
         )
         user.set_password(form.password.data)
@@ -79,13 +86,13 @@ def register():
 
         mail_result = send_mail_html(
             send_to=[user_email],
-            subject="Tiny Garden - Subscription Success",
+            subject="Fromagerie du Baou - Souscription",
             message=f"""
             <html>
                 <body>
-                    <h1>Mini Jardin</h1>
-                    <h3>Bienvenue {form.username.data} sur le site de mini jardin.</h3>
-                    <h3>Passez une bonne journée dans votre jardin</h3>
+                    <h1>Fromagerie du Baou</h1>
+                    <h3>Bienvenue {form.first_name.data}, {form.last_name.data} sur le site de la fromagerie du Baou.</h3>
+                    <h3>En espèrant que vous pourrez venir nous voir.</h3>
                 </body>
             </html>
             """,
